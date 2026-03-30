@@ -4,68 +4,211 @@
 
 ## 📌 1. Fundamentos de Sistemas Computacionais
 
-Um sistema computacional é composto por hardware e software, que trabalham juntos para processar dados.
-
-### 🖥️ Hardware básico
-
-* **Barramento interno** → comunicação entre componentes
-* **Memória** → armazenamento temporário de dados
-* **Dispositivos de armazenamento** → HD, SSD
-* **Processador (CPU)** → execução de instruções
+Um sistema computacional é formado por **hardware + software**, responsáveis pelo processamento de dados.
 
 ---
 
-### 🔄 Ciclo de instrução
+## 🖥️ Hardware básico
 
-1. Buscar instrução (fetch)
-2. Decodificar (decode)
-3. Executar (execute)
+- **Barramento interno**  
+  → Responsável pela comunicação entre os componentes  
+  📌 Exemplo: leva dados do SSD → RAM → CPU  
 
----
+- **Memória (RAM)**  
+  → Armazenamento temporário e rápido  
+  📌 Exemplo: programas abertos ficam na RAM  
 
-### 🔢 Representação numérica
+- **Armazenamento (HD/SSD)**  
+  → Guarda dados permanentemente  
+  📌 Exemplo: arquivos, jogos, sistema operacional  
 
-* Sistema binário (base 2)
-* Conversão entre decimal e binário
-
----
-
-### 🧠 Outros conceitos
-
-* Endereçamento de memória
-* Compiladores → traduzem código para linguagem de máquina
-
-📚 **Dica de estudo:**
-Computador = entrada → processamento → saída
+- **CPU (processador)**  
+  → Executa instruções  
+  📌 Exemplo: cálculos, execução de programas  
 
 ---
 
+## 🔄 Ciclo de instrução
+
+1. **Fetch (buscar)** → busca a instrução na memória  
+2. **Decode (decodificar)** → interpreta a instrução  
+3. **Execute (executar)** → realiza a operação  
+
+📌 Exemplo:
+- Buscar: "somar 2 + 2"  
+- Decodificar: operação de soma  
+- Executar: resultado = 4  
+
+---
+
+## 🔢 Representação numérica
+
+- Sistema **binário (base 2)**  
+- Usa apenas **0 e 1**
+
+📌 Exemplo:
+- Decimal: 5  
+- Binário: 101  
+
+💻 Código (Python):
+    # decimal → binário
+    n = 5
+    print(bin(n))  # 0b101
+
+    # binário → decimal
+    print(int("101", 2))  # 5
+
+---
+
+## 🧠 Memória e endereçamento
+
+- Cada dado possui um **endereço único**
+- Funciona como “posição na memória”
+
+📌 Exemplo:
+
+| Endereço | Valor |
+|----------|------|
+| 1000     | 10   |
+| 1001     | 20   |
+
+💻 Código (simulação):
+    memoria = {
+        1000: 10,
+        1001: 20
+    }
+
+    print(memoria[1000])  # 10
+
+---
+
+## ⚙️ Compiladores
+
+- Traduzem código de alto nível → linguagem de máquina  
+
+### Etapas:
+1. Análise  
+2. Tradução  
+3. Geração de código  
+
+💻 Código (C):
+    #include <stdio.h>
+
+    int main() {
+        int a = 2;
+        int b = 3;
+        int soma = a + b;
+
+        printf("%d", soma);
+        return 0;
+    }
+
+➡️ Esse código é convertido em **binário executável**
+
+---
+
+## 🔁 Resumo geral
+
+Entrada → Processamento → Saída
+
+📌 Exemplo:
+- Entrada: usuário digita algo  
+- Processamento: CPU executa  
+- Saída: resultado na tela  
+
+---
 ## 📌 2. Conceitos de Algoritmos e Lógica
 
-Um algoritmo é uma sequência finita de passos para resolver um problema.
-
-### 🧩 Características
-
-* Sequencial
-* Finito
-* Determinístico
+Um **algoritmo** é uma sequência finita de passos bem definidos para resolver um problema.
 
 ---
 
-### 🧠 Lógica de programação
+## 🧩 Características de um algoritmo
 
-* Organização do raciocínio
-* Resolução de problemas passo a passo
+- **Finito** → sempre termina após um número limitado de passos  
+- **Determinístico** → mesma entrada → mesma saída  
+- **Sequencial** → passos executados em ordem lógica  
+- **Não ambíguo** → instruções claras e objetivas  
+- **Entrada e saída** → recebe dados e produz resultado  
 
 ---
 
-### 🛠️ Métodos de construção
+## 🧠 Lógica de programação
 
-* Pseudocódigo
-* Fluxogramas
+- Organização do pensamento para resolver problemas  
+- Base para qualquer linguagem de programação  
+- Envolve:
+  - análise do problema  
+  - definição de passos  
+  - validação da solução  
 
-📚 **Dica de estudo:**
-Algoritmo = solução passo a passo
+📌 Exemplo:
+Problema → somar dois números  
+Lógica → receber valores → somar → mostrar resultado  
+
+---
+
+## 🛠️ Métodos de construção de algoritmos
+
+### 🔹 Pseudocódigo (linguagem informal estruturada)
+
+Exemplo:
+    INICIO
+        leia A
+        leia B
+        SOMA ← A + B
+        escreva SOMA
+    FIM
+
+---
+
+### 🔹 Fluxograma (representação gráfica com Mermaid)
+
+```mermaid
+flowchart TD
+    A([Início]) --> B[/Entrada: idade/]
+    B --> C{idade >= 18?}
+    C -->|Sim| D[Escreva "Maior de idade"]
+    C -->|Não| E[Escreva "Menor de idade"]
+    D --> F([Fim])
+    E --> F
+```
+
+---
+
+### 🔹 Sequencial
+```mermaid
+flowchart TD
+    A([Início]) --> B[Passo 1]
+    B --> C[Passo 2]
+    C --> D[Passo 3]
+    D --> E([Fim])
+```
+
+---
+
+### 🔹 Condicional (if/else)
+```mermaid
+flowchart TD
+    A([Início]) --> B[/Entrada de dados/]
+    B --> C{Condição?}
+    C -->|Verdadeiro| D[Ação 1]
+    C -->|Falso| E[Ação 2]
+    D --> F([Fim])
+    E --> F
+```
+
+---
+
+### 🔹 Repetição (loop)
+```mermaid
+flowchart TD
+    A([Início]) --> B[Inicialização]
+    B --> C{Condição?}
+    C -->|Sim| D[Executa ação]
+    D --> C
+    C -->|Não| E([Fim])
+```
 
 ---
 
@@ -73,39 +216,39 @@ Algoritmo = solução passo a passo
 
 ### 📦 Tipos de dados básicos
 
-* Inteiro (int)
-* Real (float)
-* Caractere (char)
-* Lógico (boolean)
+* Inteiro (int)  
+* Real (float)  
+* Caractere (char)  
+* Lógico (boolean)  
 
 ---
 
 ### 🔤 Variáveis
 
-* Espaços na memória para armazenar valores
-* Possuem nome e tipo
+* Espaços na memória para armazenar valores  
+* Possuem **nome, tipo e valor**  
 
 ---
 
 ### ➕ Operadores
 
-* **Aritméticos** → +, -, *, /
-* **Relacionais** → >, <, ==
-* **Lógicos** → AND, OR, NOT
+* **Aritméticos** → +, -, *, /  
+* **Relacionais** → >, <, ==, !=  
+* **Lógicos** → AND, OR, NOT  
 
 ---
 
 ### 📊 Representações gráficas
 
-* Fluxogramas
-* Diagramas de blocos
+* Fluxogramas  
+* Diagramas de blocos  
 
-📚 **Dica de estudo:**
-Variável = caixa que guarda valor
+📚 **Dica de estudo:**  
+Variável = espaço nomeado na memória
 
 ---
 
-## 📌 4. Estruturas Fundamentais
+## 📌 4. Estruturas Fundamentais de Programas
 
 As estruturas de controle determinam o fluxo de execução do algoritmo.
 
@@ -121,13 +264,11 @@ Execução linha por linha.
 
 Permite decisões.
 
-```pseudo
-SE idade >= 18 ENTAO
-  adulto
-SENAO
-  menor
-FIMSE
-```
+SE idade >= 18 ENTAO  
+&nbsp;&nbsp;adulto  
+SENAO  
+&nbsp;&nbsp;menor  
+FIMSE  
 
 ---
 
@@ -135,12 +276,12 @@ FIMSE
 
 Executa várias vezes.
 
-* FOR
-* WHILE
-* DO WHILE
+* FOR  
+* WHILE  
+* DO WHILE  
 
-📚 **Dica de estudo:**
-Todo algoritmo usa: sequência + decisão + repetição
+📚 **Dica de estudo:**  
+Todo programa usa: sequência + decisão + repetição
 
 ---
 
@@ -150,92 +291,88 @@ São blocos de código reutilizáveis.
 
 ### 🔧 Funções
 
-* Retornam valor
+* Retornam valor  
 
 ### 🔁 Procedimentos
 
-* Não retornam valor
+* Não retornam valor  
 
 ---
 
 ### 🎯 Vantagens
 
-* Reutilização de código
-* Organização
-* Manutenção facilitada
+* Reutilização de código  
+* Organização  
+* Manutenção facilitada  
 
-📚 **Dica de estudo:**
+📚 **Dica de estudo:**  
 Função = resolve um problema específico
 
 ---
 
-## 📌 6. Vetores e Matrizes
+## 📌 6. Estruturas de Dados: Vetores e Matrizes
 
-São estruturas de dados compostas.
+Variáveis compostas homogêneas (mesmo tipo de dados).
 
 ---
 
 ### 📊 Vetores
 
-* Lista de elementos do mesmo tipo
-* Acesso por índice
+* Lista de elementos do mesmo tipo  
+* Acesso por índice  
 
-```text
 vetor[0], vetor[1], vetor[2]
-```
 
 ---
 
 ### 🧩 Matrizes
 
-* Tabela (linhas e colunas)
+* Tabela (linhas e colunas)  
 
-```text
 matriz[linha][coluna]
-```
 
 ---
 
 ### 🎯 Aplicações
 
-* Listas de dados
-* Tabelas
-* Jogos
+* Listas de dados  
+* Tabelas  
+* Processamento de informações  
 
-📚 **Dica de estudo:**
-Vetor = 1 dimensão
+📚 **Dica de estudo:**  
+Vetor = 1 dimensão  
 Matriz = 2 dimensões
 
 ---
 
-## 📌 7. Boas Práticas e Testes
+## 📌 7. Boas Práticas, Legibilidade e Testes
 
 ### 🧹 Estilo de codificação
 
-* Indentação correta
-* Nomes claros
-* Código organizado
+* Indentação correta  
+* Nomes claros e significativos  
+* Código organizado  
 
 ---
 
 ### 💬 Comentários
 
-* Explicam o código
-* Facilitam manutenção
+* Explicam o código  
+* Facilitam manutenção  
 
 ---
 
 ### 🧪 Testes
 
-* **Teste de mesa** → simulação manual
-* **Teste unitário** → valida partes do código
+* **Teste de mesa** → simulação manual  
+* **Teste unitário** → valida partes do código  
 
-📚 **Dica de estudo:**
-Código bom = legível + organizado
+📚 **Dica de estudo:**  
+Código bom = legível + organizado + testado
 
 ---
 
-## 📌 8. Controle de Versão
+## 📌 8. Controle de Versão e Gestão de Código
 
 O controle de versão permite gerenciar alterações no código ao longo do tempo.
 
@@ -243,38 +380,40 @@ O controle de versão permite gerenciar alterações no código ao longo do temp
 
 ### 🧾 Conceitos principais
 
-* Repositório (local e remoto)
-* Versionamento de código
-* Histórico de mudanças
+* Repositório (local e remoto)  
+* Versionamento de código  
+* Histórico de mudanças  
 
 ---
 
 ### 🔄 Operações básicas
 
-* **Commit** → salvar alterações
-* **Push** → enviar para repositório remoto
-* **Pull** → atualizar código
-* **Checkout** → recuperar versões
+* **Commit** → salvar alterações  
+* **Push** → enviar para repositório remoto  
+* **Pull** → atualizar código  
+* **Checkout** → recuperar versões  
+* **Check-in / Check-out** → controle de edição  
 
 ---
 
 ### 🎯 Objetivos
 
-* Trabalho em equipe
-* Controle de alterações
-* Recuperação de versões
+* Trabalho em equipe  
+* Controle de alterações  
+* Recuperação de versões  
 
-📚 **Dica de estudo:**
+📚 **Dica de estudo:**  
 Git = controle do histórico do código
 
 ---
 
 ## 🎯 Síntese Final
 
-* Algoritmos resolvem problemas de forma estruturada
-* Estruturas básicas controlam o fluxo do programa
-* Vetores e matrizes armazenam dados
-* Boas práticas melhoram o código
-* Controle de versão organiza o desenvolvimento
+* Sistemas computacionais executam instruções usando hardware e software  
+* Algoritmos resolvem problemas de forma estruturada  
+* Estruturas básicas controlam o fluxo do programa  
+* Funções e estruturas de dados organizam o código  
+* Boas práticas melhoram a qualidade do software  
+* Controle de versão garante segurança e evolução do projeto  
 
 ---
