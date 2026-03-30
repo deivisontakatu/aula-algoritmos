@@ -385,29 +385,34 @@ while contador <= numero:
 # Exemplo com número fixo de repetições
 for i in range(3):
     print("Repetição fixa")
-
 ```
 ---
-
 ## 📌 5. Sub-rotinas e Funções
 
-São blocos de código reutilizáveis.
+São blocos reutilizáveis que organizam o programa em partes menores.
+
+---
 
 ### 🔧 Funções
+- Possuem **retorno (return)**
+- Enviam um resultado para quem chamou  
+- Podem receber parâmetros  
 
-* Retornam valor  
+📌 Exemplo: calcular média
+
+---
 
 ### 🔁 Procedimentos
-
-* Não retornam valor  
+- **Não retornam valor**
+- Apenas executam ações (ex: mostrar mensagens)
 
 ---
 
 ### 🎯 Vantagens
-
-* Reutilização de código  
-* Organização  
-* Manutenção facilitada  
+- Reutilização de código  
+- Melhor organização  
+- Facilidade de manutenção  
+- Evita repetição (código duplicado)
 
 ---
 
@@ -441,30 +446,59 @@ matriz[linha][coluna]
 * Processamento de informações  
 
 ---
+## 📌 Boas Práticas, Legibilidade e Testes (com algoritmo comentado)
 
-## 📌 7. Boas Práticas, Legibilidade e Testes
+```python
+# Função para calcular média de um aluno
+def calcular_media(nota1, nota2):
+    return (nota1 + nota2) / 2  # calcula e retorna a média
 
-### 🧹 Estilo de codificação
+# Função para verificar situação do aluno
+def verificar_aprovacao(media):
+    if media >= 6:              # verifica se a média é suficiente
+        return "Aprovado"
+    else:
+        return "Reprovado"
 
-* Indentação correta  
-* Nomes claros e significativos  
-* Código organizado  
+# 🔄 Programa principal (algoritmo)
+print("=== Sistema de Notas ===")  # saída inicial
 
----
+# Entrada de dados
+nota1 = float(input("Digite a primeira nota: "))  # lê a primeira nota
+nota2 = float(input("Digite a segunda nota: "))  # lê a segunda nota
 
-### 💬 Comentários
+# Processamento
+media_aluno = calcular_media(nota1, nota2)  # chama a função para calcular média
+situacao = verificar_aprovacao(media_aluno) # verifica se foi aprovado ou não
 
-* Explicam o código  
-* Facilitam manutenção  
+# Saída de dados
+print(f"Média: {media_aluno:.2f}")           # mostra a média formatada
+print(f"Situação: {situacao}")               # mostra o resultado final
 
----
+# -------------------------------
+# 🧪 Teste de mesa (simulação manual)
+# Exemplo:
+# nota1 = 8, nota2 = 6
+# media = 7 → aprovado
 
-### 🧪 Testes
+# -------------------------------
+# ⚙️ Testes unitários
 
-* **Teste de mesa** → simulação manual  
-* **Teste unitário** → valida partes do código  
+def teste_calcular_media():
+    assert calcular_media(10, 10) == 10      # teste caso ideal
+    assert calcular_media(0, 10) == 5        # teste valor misto
+    assert calcular_media(6, 6) == 6         # teste limite
 
----
+def teste_verificar_aprovacao():
+    assert verificar_aprovacao(7) == "Aprovado"  # acima da média
+    assert verificar_aprovacao(5) == "Reprovado" # abaixo da média
+
+# Execução dos testes
+teste_calcular_media()       # executa testes da função média
+teste_verificar_aprovacao()  # executa testes da aprovação
+
+print("Testes executados com sucesso!")  # confirmação final
+```
 
 ## 📌 8. Controle de Versão e Gestão de Código
 
@@ -495,19 +529,3 @@ O controle de versão permite gerenciar alterações no código ao longo do temp
 * Trabalho em equipe  
 * Controle de alterações  
 * Recuperação de versões  
-
-📚 **Dica de estudo:**  
-Git = controle do histórico do código
-
----
-
-## 🎯 Síntese Final
-
-* Sistemas computacionais executam instruções usando hardware e software  
-* Algoritmos resolvem problemas de forma estruturada  
-* Estruturas básicas controlam o fluxo do programa  
-* Funções e estruturas de dados organizam o código  
-* Boas práticas melhoram a qualidade do software  
-* Controle de versão garante segurança e evolução do projeto  
-
----
