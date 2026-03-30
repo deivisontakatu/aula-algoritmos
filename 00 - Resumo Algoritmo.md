@@ -446,7 +446,7 @@ matriz[linha][coluna]
 * Processamento de informações  
 
 ---
-## 📌 Boas Práticas, Legibilidade e Testes (com algoritmo comentado)
+## 📌 7. Boas Práticas, Legibilidade e Testes (com algoritmo comentado)
 
 ```python
 # Função para calcular média de um aluno
