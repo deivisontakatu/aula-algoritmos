@@ -265,13 +265,6 @@ A --> D[Valor]
 | Relacionais | > < == != >= <= |
 | Lógicos     | AND OR NOT      |
 
-```mermaid
-flowchart LR
-A[Expressão] --> B{Condição}
-B -->|true| C[Ação 1]
-B -->|false| D[Ação 2]
-```
-
 ---
 
 ## 📊 Fluxograma (símbolos)
@@ -296,52 +289,104 @@ E --> F
 
 ---
 
-## 📚 Dicas rápidas (cai MUITO)
-
-* int ≠ float
-* boolean → true/false
-* string ≠ char
-* decisão = losango
-* entrada/saída = paralelogramo
-* operadores lógicos caem com AND/OR
-
----
-
 ## 📌 4. Estruturas Fundamentais de Programas
 
-As estruturas de controle determinam o fluxo de execução do algoritmo.
+As estruturas de controle definem o fluxo de execução de um algoritmo.
 
 ---
 
-### 🔄 Sequencial
+### 🔄 1. Estrutura Sequencial  
+Execução linear, passo a passo, sem desvios.
 
-Execução linha por linha.
+- Instruções executadas na ordem escrita  
+- Não possui decisões ou repetições  
+
+📌 Exemplo:
+ler idade → calcular → mostrar resultado  
+
+✔️ Fluxo simples e direto
 
 ---
 
-### 🔀 Condicional
+### 🔀 2. Estrutura Condicional  
+Permite tomar decisões com base em condições.
 
-Permite decisões.
+- Usa operadores: >, <, ==, !=  
+- Define caminhos diferentes no algoritmo  
 
-SE idade >= 18 ENTAO  
-&nbsp;&nbsp;adulto  
-SENAO  
-&nbsp;&nbsp;menor  
+📌 Estrutura:
+SE condição ENTÃO  
+&nbsp;&nbsp;ação A  
+SENÃO  
+&nbsp;&nbsp;ação B  
 FIMSE  
 
+✔️ Tipos:
+- simples (SE)  
+- composta (SE/SENÃO)  
+- encadeada (vários SE)
+
+✔️ Usada quando há escolha lógica
+
 ---
 
-### 🔁 Repetição
+### 🔁 3. Estrutura de Repetição (Laços)  
+Executa um bloco várias vezes.
 
-Executa várias vezes.
+✔️ Tipos principais:
+- FOR → número fixo de repetições  
+- WHILE → enquanto condição for verdadeira  
+- DO WHILE → executa pelo menos uma vez  
 
-* FOR  
-* WHILE  
-* DO WHILE  
+📌 Exemplo:
+ENQUANTO x < 10  
+&nbsp;&nbsp;x = x + 1  
+FIMENQUANTO  
 
-📚 **Dica de estudo:**  
-Todo programa usa: sequência + decisão + repetição
+✔️ Usada para automatizar tarefas repetitivas
 
+---
+
+### 🎯 Resumo
+
+| Estrutura   | Função                  | Uso principal |
+|------------|------------------------|---------------|
+| Sequencial | Execução em ordem      | Base de tudo  |
+| Condicional| Tomada de decisão      | Escolhas      |
+| Repetição  | Execução em ciclos     | Repetições    |
+
+---
+
+💡 Todo programa é construído combinando essas três estruturas.
+
+## 💻 Exemplo em Python (Sequencial + Condicional + Repetição)
+
+```python
+# 🔄 Parte Sequencial
+# Entrada de dados (executa em ordem)
+numero = int(input("Digite um número: "))
+
+# 🔀 Parte Condicional
+# Verifica se o número é positivo ou negativo
+if numero >= 0:
+    print("Número positivo")
+else:
+    print("Número negativo")
+
+# 🔁 Parte de Repetição (WHILE)
+# Conta de 1 até o número informado
+contador = 1
+
+while contador <= numero:
+    print(contador)
+    contador += 1  # incrementa o contador
+
+# 🔁 Parte de Repetição (FOR)
+# Exemplo com número fixo de repetições
+for i in range(3):
+    print("Repetição fixa")
+
+```
 ---
 
 ## 📌 5. Sub-rotinas e Funções
@@ -363,9 +408,6 @@ São blocos de código reutilizáveis.
 * Reutilização de código  
 * Organização  
 * Manutenção facilitada  
-
-📚 **Dica de estudo:**  
-Função = resolve um problema específico
 
 ---
 
@@ -398,10 +440,6 @@ matriz[linha][coluna]
 * Tabelas  
 * Processamento de informações  
 
-📚 **Dica de estudo:**  
-Vetor = 1 dimensão  
-Matriz = 2 dimensões
-
 ---
 
 ## 📌 7. Boas Práticas, Legibilidade e Testes
@@ -425,9 +463,6 @@ Matriz = 2 dimensões
 
 * **Teste de mesa** → simulação manual  
 * **Teste unitário** → valida partes do código  
-
-📚 **Dica de estudo:**  
-Código bom = legível + organizado + testado
 
 ---
 
