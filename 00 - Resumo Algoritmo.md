@@ -168,8 +168,8 @@ Exemplo:
 flowchart TD
     A([Início]) --> B[/Entrada: idade/]
     B --> C{idade >= 18?}
-    C -->|Sim| D[Escreva "Maior de idade"]
-    C -->|Não| E[Escreva "Menor de idade"]
+    C -->|Sim| D[Escreva Maior de idade]
+    C -->|Não| E[Escreva Menor de idade]
     D --> F([Fim])
     E --> F
 ```
@@ -211,40 +211,99 @@ flowchart TD
 ```
 
 ---
+# 📌 3. Tipos de Dados, Variáveis e Operadores
 
-## 📌 3. Tipos de Dados, Variáveis e Operadores
+## 📦 Tipos de Dados MAIS cobrados
 
-### 📦 Tipos de dados básicos
-
-* Inteiro (int)  
-* Real (float)  
-* Caractere (char)  
-* Lógico (boolean)  
-
----
-
-### 🔤 Variáveis
-
-* Espaços na memória para armazenar valores  
-* Possuem **nome, tipo e valor**  
+| Categoria | Tipo    | Descrição          | Exemplo  |
+| --------- | ------- | ------------------ | -------- |
+| Numérico  | int     | Inteiro            | 10       |
+| Numérico  | float   | Real (decimal)     | 3.5      |
+| Numérico  | double  | Precisão maior     | 3.141592 |
+| Texto     | char    | 1 caractere        | 'A'      |
+| Texto     | string  | Cadeia de texto    | "Oi"     |
+| Lógico    | boolean | Verdadeiro/Falso   | true     |
+| Especial  | void    | Sem valor          | função   |
+| Especial  | null    | Sem valor definido | vazio    |
 
 ---
 
-### ➕ Operadores
+## 🧩 Tipos estruturados (importante em prova)
 
-* **Aritméticos** → +, -, *, /  
-* **Relacionais** → >, <, ==, !=  
-* **Lógicos** → AND, OR, NOT  
+| Tipo            | Descrição           | Exemplo       |
+| --------------- | ------------------- | ------------- |
+| array           | Lista de mesmo tipo | [1,2,3]       |
+| matriz          | Array 2D            | [[1,2],[3,4]] |
+| struct/registro | Agrupa dados        | pessoa.nome   |
+| enum            | Valores fixos       | dias          |
+| ponteiro        | Endereço memória    | *p            |
 
 ---
 
-### 📊 Representações gráficas
+## 🔤 Variáveis
 
-* Fluxogramas  
-* Diagramas de blocos  
+| Elemento | Descrição      |
+| -------- | -------------- |
+| Nome     | Identificação  |
+| Tipo     | Define o valor |
+| Valor    | Conteúdo       |
 
-📚 **Dica de estudo:**  
-Variável = espaço nomeado na memória
+```mermaid
+flowchart TD
+A[Variável] --> B[Nome]
+A --> C[Tipo]
+A --> D[Valor]
+```
+
+---
+
+## ➕ Operadores
+
+| Tipo        | Operadores      |
+| ----------- | --------------- |
+| Aritméticos | + - * / %       |
+| Relacionais | > < == != >= <= |
+| Lógicos     | AND OR NOT      |
+
+```mermaid
+flowchart LR
+A[Expressão] --> B{Condição}
+B -->|true| C[Ação 1]
+B -->|false| D[Ação 2]
+```
+
+---
+
+## 📊 Fluxograma (símbolos)
+
+| Símbolo       | Nome          | Função       |
+| ------------- | ------------- | ------------ |
+| Oval          | Início/Fim    | começo/final |
+| Paralelogramo | Entrada/Saída | ler/escrever |
+| Retângulo     | Processo      | cálculo      |
+| Losango       | Decisão       | condição     |
+| Seta          | Fluxo         | direção      |
+
+```mermaid
+flowchart TD
+A([Início]) --> B[/Entrada/]
+B --> C{Condição}
+C -->|Sim| D[Processo]
+C -->|Não| E[Saída]
+D --> F([Fim])
+E --> F
+```
+
+---
+
+## 📚 Dicas rápidas (cai MUITO)
+
+* int ≠ float
+* boolean → true/false
+* string ≠ char
+* decisão = losango
+* entrada/saída = paralelogramo
+* operadores lógicos caem com AND/OR
 
 ---
 
